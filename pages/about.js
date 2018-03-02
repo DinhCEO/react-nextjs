@@ -1,5 +1,6 @@
 import React from 'react';
 import {AuthService} from 'service';
+import './about.css';
 
 class About extends React.Component {
     constructor(props) {
@@ -29,6 +30,7 @@ class About extends React.Component {
                         }
                     `}
                 </style>
+                <span className="dinhceo">dinhceo</span>
             </div>
         )
     }
