@@ -9,6 +9,7 @@ class About extends React.Component {
     }
 
     render() {
+        console.log(process.env.PORT);
         return (
             <div>
                 <h1 className="about">About page {this.state.name}</h1>
