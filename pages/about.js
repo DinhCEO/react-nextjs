@@ -1,15 +1,20 @@
 import React from 'react';
+import {AuthService} from 'service';
 
 class About extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
+        this.authService = AuthService;
+        this.state       = {
             name: 'dinhceo :D'
         }
     }
 
     render() {
         console.log(process.env.PORT);
+        this.authService.myFunction().then(result => {
+            console.log(result);
+        });
         return (
             <div>
                 <h1 className="about">About page {this.state.name}</h1>

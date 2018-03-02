@@ -1,13 +1,16 @@
 require('dotenv').config({silent: true});
 const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer');
+const path                   = require('path');
 const {ANALYZE}              = process.env;
 const env                    = require('./env-config');
 const webpack                = require('webpack');
+const ROOT_DIR               = path.resolve(__dirname);
 
 module.exports = {
     distDir            : 'public',
     pageExtensions     : ['jsx', 'js'],
     webpack            : (config, {isServer}) => {
+        config.resolve['alias']['service'] = `${ROOT_DIR}/service/`;
         config.plugins.push(new webpack.EnvironmentPlugin(env));
         if (ANALYZE === 'true') {
             config.plugins.push(new BundleAnalyzerPlugin({
