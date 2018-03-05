@@ -12,17 +12,17 @@ class Index extends React.Component {
         return (
             <div>
                 <h1 className="about">About page {this.state.name}</h1>
-                <style jsx>
-                    {`
-                        .about {
-                            font: 15px Helvetica, Arial, sans-serif;
-                            background: #eee;
-                            padding: 20px;
-                            text-align: center;
-                            transition: 100ms ease-in background;
-                        }
-                    `}
-                </style>
+                {/*<style jsx>*/}
+                    {/*{`*/}
+                        {/*.about {*/}
+                            {/*font: 15px Helvetica, Arial, sans-serif;*/}
+                            {/*background: #eee;*/}
+                            {/*padding: 20px;*/}
+                            {/*text-align: center;*/}
+                            {/*transition: 100ms ease-in background;*/}
+                        {/*}*/}
+                    {/*`}*/}
+                {/*</style>*/}
             </div>
         )
     }
