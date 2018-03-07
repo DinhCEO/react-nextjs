@@ -19,6 +19,7 @@ class About extends React.Component {
             <div>
                 <h1 className="about">About page</h1>
                 <h1 className="about">State page {this.state.name}</h1>
+                <img width={850} height={450} src="/static/images/cc687d2e0353b4a84d6892f7853845a3_l.jpg"/>
                 <style jsx>
                     {`
                         .about {

@@ -3,6 +3,12 @@
     "next/babel"
   ],
   "plugins": [
-    ["styled-jsx/babel", { "optimizeForSpeed": true }]
+    [
+      "styled-jsx/babel",
+      {
+        "optimizeForSpeed": true,
+        "sourceMaps": true
+      }
+    ]
   ]
 }
