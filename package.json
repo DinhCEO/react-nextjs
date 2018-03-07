@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
+    "dev": "./node_modules/.bin/next",
+    "build": "./node_modules/.bin/next build",
     "start": "npm i && npm run build && NODE_ENV=production node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@zeit/next-css": "^0.1.2",
     "axios": "^0.18.0",
     "compression-webpack-plugin": "^1.1.10",
     "dotenv": "^5.0.1",
@@ -24,6 +25,8 @@
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
+    "style-loader": "^0.20.2",
+    "css-loader": "^0.28.10",
     "webpack": "^2.5.1",
     "webpack-bundle-analyzer": "^2.11.1"
   }

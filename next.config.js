@@ -11,8 +11,12 @@ const BUILD_DIR              = ROOT_DIR + '/abc';
 module.exports = {
     distDir            : 'public',
     pageExtensions     : ['jsx', 'js'],
-    webpack            : (config, {isServer}) => {
+    webpack            : (config, options) => {
         process.env.languages.split(',').map(lang => buildConfigByLanguage(lang, config));
+        const {dev, isServer} = options;
+        if (!dev) {
+            config.devtool = 'source-map'
+        }
         config.resolve['alias']['service'] = `${ROOT_DIR}/service/`;
         config.plugins.push(new webpack.DefinePlugin({'process.env': env}));
         // config.plugins.push(new webpack.EnvironmentPlugin(env));
@@ -23,15 +27,10 @@ module.exports = {
                 openAnalyzer: true
             }))
         }
-
-        return config;
+//alias folder
+        config.resolve['alias']['service'] = `${ROOT_DIR}/service/`;
+        config.performance.hints           = false;        return config;
     },
-    serverRuntimeConfig: { // Will only be available on the server side
-        mySecret: 'secret'
-    },
-    publicRuntimeConfig: { // Will be available on both server and client
-        staticFolder: '/public'
-    }
 };
 
 function buildConfigByLanguage(lang, config) {
