@@ -1,6 +1,5 @@
 require('dotenv').config({silent: true});
 const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer');
-const ExtractTextPlugin      = require('extract-text-webpack-plugin');
 const path                   = require('path');
 const {ANALYZE}              = process.env;
 const env                    = require('./env-config');
