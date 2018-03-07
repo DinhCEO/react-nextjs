@@ -9,17 +9,16 @@ const ROOT_DIR               = path.resolve(__dirname);
 const BUILD_DIR              = ROOT_DIR + '/abc';
 
 module.exports = {
-    distDir            : 'public',
-    pageExtensions     : ['jsx', 'js'],
-    webpack            : (config, options) => {
+    distDir       : 'public',
+    pageExtensions: ['jsx', 'js'],
+    webpack       : (config, options) => {
         process.env.languages.split(',').map(lang => buildConfigByLanguage(lang, config));
         const {dev, isServer} = options;
         if (!dev) {
             config.devtool = 'source-map'
         }
         config.resolve['alias']['service'] = `${ROOT_DIR}/service/`;
-        config.plugins.push(new webpack.DefinePlugin({'process.env': env}));
-        // config.plugins.push(new webpack.EnvironmentPlugin(env));
+        config.plugins.push(new webpack.EnvironmentPlugin(env));
         if (ANALYZE === 'true') {
             config.plugins.push(new BundleAnalyzerPlugin({
                 analyzerMode: 'server',
@@ -29,7 +28,8 @@ module.exports = {
         }
 //alias folder
         config.resolve['alias']['service'] = `${ROOT_DIR}/service/`;
-        config.performance.hints           = false;        return config;
+        config.performance.hints           = false;
+        return config;
     },
 };
 

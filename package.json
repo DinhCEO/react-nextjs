@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "./node_modules/.bin/next",
-    "build": "./node_modules/.bin/next build",
+    "dev": "node_modules/.bin/next",
+    "build": "node_modules/.bin/next build",
     "start": "npm i && npm run build && NODE_ENV=production node server.js"
   },
   "keywords": [],
