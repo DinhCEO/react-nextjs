@@ -1,6 +1,5 @@
 import React from 'react';
 import {AuthService} from 'service';
-import './about.css';
 
 class About extends React.Component {
     constructor(props) {
@@ -18,8 +17,19 @@ class About extends React.Component {
         });
         return (
             <div>
-                <h1 className="about">About page {this.state.name}</h1>
-                <span className="dinhceo">dinhceo</span>
+                <h1 className="about">About page</h1>
+                <h1 className="about">State page {this.state.name}</h1>
+                <style jsx>
+                    {`
+                        .about {
+                            font: 15px Helvetica, Arial, sans-serif;
+                            background: #eee;
+                            padding: 20px;
+                            text-align: center;
+                            transition: 100ms ease-in background;
+                        }
+                    `}
+                </style>
             </div>
         )
     }
