@@ -17,7 +17,7 @@ module.exports = {
         if (!dev) {
             config.devtool = 'source-map'
         }
-        config.resolve['alias']['service'] = `${ROOT_DIR}/service/`;
+        //add ruler
         config.plugins.push(new webpack.EnvironmentPlugin(env));
         if (ANALYZE === 'true') {
             config.plugins.push(new BundleAnalyzerPlugin({
@@ -26,7 +26,8 @@ module.exports = {
                 openAnalyzer: true
             }))
         }
-//alias folder
+
+        //alias folder
         config.resolve['alias']['service'] = `${ROOT_DIR}/service/`;
         config.performance.hints           = false;
         return config;
